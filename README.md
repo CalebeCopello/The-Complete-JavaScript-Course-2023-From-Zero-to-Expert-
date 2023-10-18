@@ -21,3 +21,30 @@ There are two types of values in JavaScript, objects and primitives, and a value
 
 #### Dynamic typing
 Differently from C or Java (or TypeScript), we do not need to define the type of the variable when we want to store a value in it. So in JavaScript the variable does not have a type, only it's value. It has its advantages and also its drawbacks. We don't need to worry about selecting types for variables, but it's more difficult to find a but if it comes from a value in a variable.
+
+### Let, Const, Var
+
+There are three ways to declare a variable in JavaScript: Let, Const, Var. We use Let to declare variable that are going to change or are going to be reassinged.
+```js
+let code = 'fun'
+code = 'really fun'
+
+let undefinedVar
+undefinedVar = 'now it\'s defined' 
+```
+We are going to use Const to declare imutable variables, we are going to declare it and only read it throught the code
+```js
+const PI = 3.14
+console.log(PI)
+```
+if we try to reassing  we are going to get an error `Àssignment to constant variable.
+
+We can, but shouldn't, use Var to declare variables. It's used for legacy reasons. Altough Let and Var seem similar, there are differences, for example, Let is block scoped and Var is function scoped.
+
+In JavaScript we can used the three of them to create a variable, ou any of them. It's possible to create a var like this:
+```js
+javaScript = 'crazy'
+console.log(javaScript)
+```
+no errors will occour, this variable will create a property in Global scope, that can be problematic later.
+

@@ -47,3 +47,36 @@ javaScript = 'crazy'
 console.log(javaScript)
 ```
 no errors will occur, this variable will create a property in Global scope, that can be problematic later.
+
+## Developer’s log, Stardate 2310.18
+### Type Conversion and Type Coercion
+
+Type conversion is when the developer manually changes from one type to another, type coercion is when JavaScript does automatically. Type conversion is necessary when we need to change the value type of a variable, for example, when a user gives an input that should be a Number, but it's type is a String, a problem will occur because we will not be able to make calculations with it.
+```js
+let year = '1997'
+let nextDecade = year + 10
+console.log(nextDecade) 
+```
+in the example above, the result in the console will be `199710` instead of `2007` because we are not adding two Number types, we are concatenating a String and a Number. To transform the String to a Number we use the Number function.
+```js
+let year = '1997'
+let nextDecade = Number(year) + 10
+console.log(nextDecade) 
+```
+Now te result will be `2007` as expected, although we didn't change the type of the variable year. We can use the function String(), to convert a type to String. Boolean() is used to convert a type to Boolean. Symbol() and BigInt() will convert the type to Symbol and BigInt respectively.
+
+Type Coercion, as explained above, happens when JavaScript changes the type of value automatically, here we have an example
+```js
+console.log('20' - '5' - 3)
+```
+the result will be `12` because JavaScript changed the type of `'20'` and `'5'` to Number so it could proceed with the minus operator. Although if the use this code
+```js
+console.log('20' + '5' - 3)
+```
+the result will not be `23` it is going to be `202` because JavaScript will first concatenate the two String `'20'` and `'5'` resulting in a String `'205'` and then proceed with the minus operation, to do so, it will coerce `'205'` to a Number and doing the math.
+
+It is complicated for most developers, because the language does this behind the scenes, so it may be interesting for the developer to convert the type of the variable before do some operation with it.
+
+Let's go back again to the Boolean() function, there are 5 falsy values: `0` `''`, in this case, an empty string, `undefined` `null` `NaN`.
+
+Let's now talk about the Equality Operators, both `==` and `===`, the triple equal sign will compare not only de value but also its type, so `18 === '18'` will return `false` while the double equal sign will only compare the value and do some coercion behind the scene, so `18 == '18'` will return `true`. We also call `==` loose equality operator and `===` the strict equality operator.

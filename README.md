@@ -24,7 +24,7 @@ Differently from C or Java (or TypeScript), we do not need to define the type of
 
 ### Let, Const, Var
 
-There are three ways to declare a variable in JavaScript: Let, Const, Var. We use Let to declare variable that are going to change or are going to be reassinged.
+There are three ways to declare a variable in JavaScript: Let, Const, Var. We use Let to declare variable that are going to change or are going to be reassigned.
 ```js
 let code = 'fun'
 code = 'really fun'
@@ -32,19 +32,18 @@ code = 'really fun'
 let undefinedVar
 undefinedVar = 'now it\'s defined' 
 ```
-We are going to use Const to declare imutable variables, we are going to declare it and only read it throught the code
+We are going to use Const to declare immutable variables, we are going to declare it and only read it throught the code
 ```js
 const PI = 3.14
 console.log(PI)
 ```
-if we try to reassing  we are going to get an error `Àssignment to constant variable.
+if we try to reassign  we are going to get an error `Assignment to constant variable.
 
-We can, but shouldn't, use Var to declare variables. It's used for legacy reasons. Altough Let and Var seem similar, there are differences, for example, Let is block scoped and Var is function scoped.
+We can, but shouldn't, use Var to declare variables. It's used for legacy reasons. Although Let and Var seem similar, there are differences, for example, Let is block scoped and Var is function scoped.
 
 In JavaScript we can used the three of them to create a variable, ou any of them. It's possible to create a var like this:
 ```js
 javaScript = 'crazy'
 console.log(javaScript)
 ```
-no errors will occour, this variable will create a property in Global scope, that can be problematic later.
-
+no errors will occur, this variable will create a property in Global scope, that can be problematic later.

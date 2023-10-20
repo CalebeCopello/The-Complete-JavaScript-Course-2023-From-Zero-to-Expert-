@@ -116,3 +116,9 @@ let isEven = (number % 2) == 0 ? true : false
 console.log(isEven)
 ```
 again it's only possible because it's an expression. In other words, we have and statement `let isEven` and to fulfill the slot, we need an expression, in this case `(number % 2) == 0 ? true : false`
+
+## Developer’s log, Stardate 2310.20
+
+### Strict Mode
+
+It's possible to activate strict mode on any JavaScript file just by putting `'use strict'` at the top of the file. It will give more detailed information, like variables that are not defined or special names for variables that may be used in the future development of the language. So it's interesting, when developing using JS, to use this line at the top of any file.

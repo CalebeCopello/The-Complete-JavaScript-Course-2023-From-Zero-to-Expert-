@@ -104,7 +104,7 @@ and the output is going to be `x is not bigger than 1`, while if the do this:
 let x = 1
 console.log(`${if (x > 1) {'x is bigger than 1'} else {'x is not bigger than 1'}}`)
 ```
-the outpur is going to be `SyntaxError: Unexpected token 'if'`.
+the output is going to be `SyntaxError: Unexpected token 'if'`.
 
 It's specially important in ReactJS, because we can only put expressions inside the curly brackets `{/* expressions goes here */}` in a JSX/React file.
 
@@ -115,4 +115,4 @@ let number = 11
 let isEven = (number % 2) == 0 ? true : false
 console.log(isEven)
 ```
-again it's only possible because it's an expression. In other words, we have and statement `let isEvene` and to fullfil the slot, we need an expression, in this case `(number % 2) == 0 ? true : false`
+again it's only possible because it's an expression. In other words, we have and statement `let isEven` and to fulfill the slot, we need an expression, in this case `(number % 2) == 0 ? true : false`

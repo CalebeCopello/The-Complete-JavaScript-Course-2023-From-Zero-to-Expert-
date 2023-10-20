@@ -1,13 +1,16 @@
 # The Complete JavaScript Course 2023 From Zero to Expert!
+
  My code repository for this course.
  I will also write what I understood from different lessons.
 
 ## Developer’s log, Stardate 2310.16
+
 ### What is JavaScript
 
 JavaScript can be defined as a high-level, object-oriented, multi-paradigm programming language. OK... Fine, but what does it mean? Well, a programming language is a tool to construct some kind of layer between the hardware and the user, in other words, it's a set of instructions to make the computer do things. Taking this into account, we can also think about the high-level characteristic, it means that the language is closer to the user than to the hardware, differently from C for example, in JavaScript it's no need to manage memory. JavaScript is also an object-oriented language, instead of old paradigms like C that was an event oriented language. And it's multi-paradigm because it accepts many styles to structure the code.
 
 ## Developer’s log, Stardate 2310.17
+
 ### Data Types
 
 There are two types of values in JavaScript, objects and primitives, and a value is a primitive when it's not an object. There are 7 primitive data types: number `let jsValue = 7`, string, `let jsValue = 'JavaScript'`, boolean `let jsValue = true`, undefined `let jsValue`, null `let jsValue = ''`, symbol and bigInt.
@@ -20,6 +23,7 @@ There are two types of values in JavaScript, objects and primitives, and a value
 * BigInt: it's used to larger integers that the Number type can hold.
 
 #### Dynamic typing
+
 Differently from C or Java (or TypeScript), we do not need to define the type of the variable when we want to store a value in it. So in JavaScript the variable does not have a type, only it's value. It has its advantages and also its drawbacks. We don't need to worry about selecting types for variables, but it's more difficult to find a but if it comes from a value in a variable.
 
 ### Let, Const, Var
@@ -49,6 +53,7 @@ console.log(javaScript)
 no errors will occur, this variable will create a property in Global scope, that can be problematic later.
 
 ## Developer’s log, Stardate 2310.18
+
 ### Type Conversion and Type Coercion
 
 Type conversion is when the developer manually changes from one type to another, type coercion is when JavaScript does automatically. Type conversion is necessary when we need to change the value type of a variable, for example, when a user gives an input that should be a Number, but it's type is a String, a problem will occur because we will not be able to make calculations with it.
@@ -80,3 +85,34 @@ It is complicated for most developers, because the language does this behind the
 Let's go back again to the Boolean() function, there are 5 falsy values: `0` `''`, in this case, an empty string, `undefined` `null` `NaN`.
 
 Let's now talk about the Equality Operators, both `==` and `===`, the triple equal sign will compare not only de value but also its type, so `18 === '18'` will return `false` while the double equal sign will only compare the value and do some coercion behind the scene, so `18 == '18'` will return `true`. We also call `==` loose equality operator and `===` the strict equality operator.
+
+## Developer’s log, Stardate 2310.19
+
+### Expressions vs Statements
+
+I got a bit confusing trying to understand the difference between both concepts. A understood an expressions as something that produces a value, for example `40 + 2` is an expressions because it produces the value of `42`. A statement does not produce an value by itself, it's an instruction for the computer to do something `let variable = /* an expression */`. It's like the statements organize the program to produce an expression. 
+
+### The Conditional (Ternary) Operator
+
+I brought this topic here, because it's related to the previous one. Taking switch case aside, we have two ways of dealing with conditions, one of them is the **if statement** the other one is the **conditional (ternary) operator expression**, what does it mean, that the **if statement** does not produce a value, however the  **conditional (ternary) operator expression** does, so it's possible to do something like this:
+```js
+let x = 1
+console.log(`${ x > 1 ? 'x is bigger than 1' : 'x is not bigger than 1'}`) 
+```
+and the output is going to be `x is not bigger than 1`, while if the do this:
+```js
+let x = 1
+console.log(`${if (x > 1) {'x is bigger than 1'} else {'x is not bigger than 1'}}`)
+```
+the outpur is going to be `SyntaxError: Unexpected token 'if'`.
+
+It's specially important in ReactJS, because we can only put expressions inside the curly brackets `{/* expressions goes here */}` in a JSX/React file.
+
+Another interesting use of the **conditional (ternary) operator expression** is that we can store a value inside a variable using it
+
+```js
+let number = 11
+let isEven = (number % 2) == 0 ? true : false
+console.log(isEven)
+```
+again it's only possible because it's an expression. In other words, we have and statement `let isEvene` and to fullfil the slot, we need an expression, in this case `(number % 2) == 0 ? true : false`

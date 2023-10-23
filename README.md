@@ -122,3 +122,49 @@ again it's only possible because it's an expression. In other words, we have and
 ### Strict Mode
 
 It's possible to activate strict mode on any JavaScript file just by putting `'use strict'` at the top of the file. It will give more detailed information, like variables that are not defined or special names for variables that may be used in the future development of the language. So it's interesting, when developing using JS, to use this line at the top of any file.
+
+### Functions
+
+To start to talk about functions it's interesting to set the difference between **arguments** and **parameters**. The **parameter** is the placeholder that goes in the function construction while the **argument** is what goes when the fuction is called, like this:
+```js
+function differenceParameterArgument(parameter) {
+    return parameter
+}
+
+console.log(differenceParameterArgument('argument'))
+
+```
+
+### Functions Declarations and Function Expressions
+
+What was done above it's called **Function Declaration**, it's also possible to rewrite this using a function as an expression, let's remember that an expression return a value. It's possible to do it using an **Anonymous Function** as in the example below:
+
+```js
+const aFunc = function (parameter) {
+    return parameter
+}
+console.log(aFunc('argument'))
+```
+
+The big difference between both is that the function declaration can be called before they are defined in the code, like this:
+
+```js
+callingFunction(`I'm the first`)
+
+function callingFunction (parameter) {
+    console.log(parameter)
+}
+```
+something that is not possible with the function expression.
+
+## Developer’s log, Stardate 2310.23
+
+### Arrow Functions
+
+An Arrow Function is just a type of a Function Expressions. So it's possible to store it in a variable, like this:
+```js
+const evenOrOdd = number => number % 2 == 0 ? 'Even' : 'Odd'
+let nr = 7
+console.log(`Number ${nr} is ${evenOrOdd(nr)}`)
+```
+Arrow functions are quite interesting, but, they do not have the `this` keywork.

@@ -135,7 +135,7 @@ console.log(differenceParameterArgument('argument'))
 
 ```
 
-### Functions Declarations and Function Expressions
+#### Functions Declarations and Function Expressions
 
 What was done above it's called **Function Declaration**, it's also possible to rewrite this using a function as an expression, let's remember that an expression return a value. It's possible to do it using an **Anonymous Function** as in the example below:
 
@@ -159,7 +159,7 @@ something that is not possible with the function expression.
 
 ## Developer’s log, Stardate 2310.23
 
-### Arrow Functions
+#### Arrow Functions
 
 An Arrow Function is just a type of a Function Expressions. So it's possible to store it in a variable, like this:
 ```js
@@ -167,4 +167,61 @@ const evenOrOdd = number => number % 2 == 0 ? 'Even' : 'Odd'
 let nr = 7
 console.log(`Number ${nr} is ${evenOrOdd(nr)}`)
 ```
-Arrow functions are quite interesting, but, they do not have the `this` keywork.
+Arrow functions are quite interesting, but, they do not have the `this` keyword.
+
+### Arrays
+
+There are two ways of starting an array, with the literal syntax:
+```js
+const years = [1997, 1999, 2003, 2005]
+```
+
+or with the Array functions
+```js
+const years = new Array(1997, 1999, 2003, 2005)
+```
+
+in both cases, just numbers were stored inside the array, but it's possible to store any type of data, including arrays.
+
+To get some element inside the array, we just use the array with the square brackets to get the element, it starts counting from 0. So the first element is going to be `years[0]`. To get the last element we can use `years[years.length-1]` with the `length` property it's possible to see how many elements there are inside the array, but it starts counting from one, so to get the last one we use `length - 1` because the array starts from 0.
+
+Something interesting, about non primitive values, like an array, is that we can assign it as a constant and yet change it's value
+```js
+const names = ['James', 'Arthur', 'Bryan']
+console.log(names)
+names[1] = 'Ben'
+console.log(names)
+```
+the first `console.log` is going to output: `[ 'James', 'Arthur', 'Bryan' ]`, whilst the second one `[ 'James', 'Ben', 'Bryan' ]`. Again only primitive types (Number, String, Booleans, Symbol, BigInt) are immutable, I didn't list null and undefined, for obvious reason. We cannot change the whole array, though.
+
+#### Array Methods
+
+Let's deal with some common Array methods, lets start with the previous one.
+```js
+const names = ['James', 'Arthur', 'Bryan']
+console.log(names)
+names.push('Ben')
+console.log(names)
+names.unshift('Will')
+console.log(names)
+```
+We have the original Array: `[ 'James', 'Arthur', 'Bryan' ]` the `push()` method adds an element at the end of the array `[ 'James', 'Arthur', 'Bryan', 'Ben' ]`, and the `unshift()` adds an element at the beginning of it `[ 'Will', 'James', 'Arthur', 'Bryan', 'Ben' ]`
+```js
+const names = [ 'Will', 'James', 'Arthur', 'Bryan', 'Ben' ]
+const deleted = names.pop()
+console.log(names)
+console.log(deleted)
+names.shift()
+console.log(names)
+```
+We have the original Array: `[ 'Will', 'James', 'Arthur', 'Bryan', 'Ben' ]` the `pop()` method deletes the last element of the array `[ 'Will', 'James', 'Arthur', 'Bryan' ]`, we stored it inside the deleted constant `'Ben'`, and the `shift()` method deletes the first element `[ 'James', 'Arthur', 'Bryan' ]`.
+
+We can use the `includes()` method to check if an element is inside the Array. 
+```js
+const names = [ 'Will', 'James', 'Arthur', 'Bryan', 'Ben' ]
+console.log(names.includes('Ben'))
+names.pop()
+console.log(names.includes('Ben'))
+```
+The first output is going to be `true` whilst the second will be `false`.
+

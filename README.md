@@ -278,4 +278,10 @@ const willData = {
 console.log(willData.age(1994))
 console.log(willData['age'](1994))
 ```
-now the output of the console.log is going to be the current year of the system minus the argument passed within the Method. It's possible to used both ways: Dot Operation or Bracket Notation.
+now the output of the` console.log` is going to be the current year of the system minus the argument passed within the Method. It's possible to used both ways: Dot Operation or Bracket Notation.
+
+## Developer’s log, Stardate 2310.24
+
+### Loops
+
+The point that I want to highlight about loops is the ****continue**** and ****break**** statements. they add an extra layer of control. The **continue** statement terminates the execution of the loop in the current interaction, in contrast to the **break** statement that terminates the loop itself. 

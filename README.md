@@ -225,3 +225,57 @@ console.log(names.includes('Ben'))
 ```
 The first output is going to be `true` whilst the second will be `false`.
 
+### Objects
+
+In Arrays we can only reach each elements referring to its position inside the array:
+```js
+const names = [ 'Will', 'James', 'Arthur', 'Bryan', 'Ben' ]
+console.log(names[0]) // 'Will'
+console.log(names[3]) // 'Bryan'
+```
+It's fine, if the Array isn't too long, and it has the same type of data. If it's too long, or it has different types of data inside it, it can get pretty messy. So it's better to use Objects. With this data type we can name each element to easily refer to them in the future.
+```js
+const currentYear = new Date().getFullYear()
+const birthDate = 1994
+const willData = {
+    name: 'Will',
+    age: currentYear - birthDate,
+    bloodType: 'A+',
+    parents: ['Mary', 'John']
+}
+```
+So with the code above we created an Object with 4 keys, or 4 properties: name, age, bloodType and parents. We can access the information through one of those keys. 
+
+There are two ways of accessing these keys, through Dot Operation or Bracket Notation
+```js
+const currentYear = new Date().getFullYear()
+const birthDate = 1994
+const willData = {
+    name: 'Will',
+    age: currentYear - birthDate,
+    bloodType: 'A+',
+    parents: ['Mary', 'John']
+}
+console.log(willData.parents)
+console.log(willData['parents'])
+```
+The difference is that we can put any kind of **expression** inside the Bracket Notation
+
+#### Objects Methods
+
+Now let's take one property of the Object and assign an Function to it, in this case, it's called a Method
+
+```js
+const currentYear = new Date().getFullYear()
+const willData = {
+    name: 'Will',
+    bloodType: 'A+',
+    parents: ['Mary', 'John'],
+    isGraduated: false,
+    friends: [ 'James', 'Arthur', 'Bryan', 'Ben' ],
+    age: (birthDate) => currentYear - birthDate,
+}
+console.log(willData.age(1994))
+console.log(willData['age'](1994))
+```
+now the output of the console.log is going to be the current year of the system minus the argument passed within the Method. It's possible to used both ways: Dot Operation or Bracket Notation.
